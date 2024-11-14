@@ -9,6 +9,8 @@ var listePoints = [
     y: 375,
     xPoint: 300,
     yPoint: 280,
+    xInitBulle: 220,
+    yInitBulle: 125,
     xBulle: 220,
     yBulle: 125,
     rayon: 110,
@@ -21,6 +23,8 @@ var listePoints = [
     y: 350,
     xPoint: 680,
     yPoint: 200,
+    xInitBulle: 600,
+    yInitBulle: 125,
     xBulle: 600,
     yBulle: 125,
     rayon: 160,
@@ -34,6 +38,8 @@ var listePoints = [
     y: 550,
     xPoint: 740,
     yPoint: 485,
+    xInitBulle: 675,
+    yInitBulle: 375,
     xBulle: 675,
     yBulle: 375,
     rayon: 90,
@@ -47,6 +53,8 @@ var listePoints = [
     y: 650,
     xPoint: 555,
     yPoint: 760,
+    xInitBulle: 475,
+    yInitBulle: 450,
     xBulle: 475,
     yBulle: 450,
     rayon: 135,
@@ -60,6 +68,8 @@ var listePoints = [
     y: 675,
     xPoint: 300,
     yPoint: 610,
+    xInitBulle: 200,
+    yInitBulle: 425,
     xBulle: 200,
     yBulle: 425,
     rayon: 105,
@@ -73,6 +83,8 @@ var listePoints = [
     y: 550,
     xPoint: 110,
     yPoint: 500,
+    xInitBulle: 25,
+    yInitBulle: 300,
     xBulle: 25,
     yBulle: 300,
     rayon: 100,
@@ -136,8 +148,6 @@ var enMouvement = false;
 var cheminPerso = [];
 //la position ou le perso doit aller
 var destination = 0;
-//trouver la position de la bulle au debut
-trouverPosBulle();
 //TEST
 // var vPoint = 2;
 
@@ -173,13 +183,16 @@ function renderer() {
     );
   }
   //dessiner nuage si elle est active
-  if(!enMouvement && perso.surIle){
-    ctx.globalAlpha = 0.5;
-    ctx.drawImage(bulle.img, bulle.posX, bulle.posY);
-    ctx.globalAlpha = 1;
-    ctx.font = "20px hwt-artz";
-    ctx.fillText(listePoints[perso.pos].tag, bulle.posX + 35, bulle.posY + bulle.height + 10);
-  }
+  listePoints.forEach((point) => {
+    animerNuage(point);
+    if(perso.surIle && point.hover){
+      ctx.globalAlpha = 0.5;
+      ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
+      ctx.globalAlpha = 1;
+      ctx.font = "20px hwt-artz";
+      ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10);
+    }
+  });
   //dessiner guide
   if (isGuide) {
     ctx.drawImage(guide.img, 0, 0);
@@ -343,8 +356,6 @@ function bougerPerso() {
           "https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/10/EricD.png";
       }
       perso.img.src = perso.urlImage;
-      //set la position de la bulle
-      trouverPosBulle();
     } else {
       //sinon il se deplace a un point supplementaire
       destination += 1;
@@ -418,10 +429,17 @@ function animerPerso() {
   }
 }
 
-//fonstion qui permet de trouver la position de la bulle
-function trouverPosBulle(){
-  bulle.posX = listePoints[perso.pos].xBulle;
-  bulle.posY = listePoints[perso.pos].yBulle;
+//fonction pour animer les nuages
+function animerNuage(point){
+  var x = 0;
+  if(point.hover && point.yBulle < point.yInitBulle){
+    point.yBulle ++;
+    console.log("++")
+  } 
+  if (!point.hover && point.yBulle <= point.yInitBulle && point.yBulle >= point.yInitBulle - 100){
+    point.yBulle --;
+    console.log("--")
+  }
 }
 
 //fonction pour changer de page
