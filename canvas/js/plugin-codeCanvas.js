@@ -13,6 +13,7 @@ var listePoints = [
     yInitBulle: 125,
     xBulle: 220,
     yBulle: 125,
+    varAnim: 0,
     rayon: 110,
     couleur: "rgb(255, 0, 0)",
     tag: "Evenement",
@@ -27,6 +28,7 @@ var listePoints = [
     yInitBulle: 125,
     xBulle: 600,
     yBulle: 125,
+    varAnim: 0,
     rayon: 160,
     couleur: "rgb(255, 0, 0)",
     tag: "Cours",
@@ -42,6 +44,7 @@ var listePoints = [
     yInitBulle: 375,
     xBulle: 675,
     yBulle: 375,
+    varAnim: 0,
     rayon: 90,
     couleur: "rgb(255, 0, 0)",
     tag: "Projets",
@@ -57,6 +60,7 @@ var listePoints = [
     yInitBulle: 450,
     xBulle: 475,
     yBulle: 450,
+    varAnim: 0,
     rayon: 135,
     couleur: "rgb(255, 0, 0)",
     tag: "Futur",
@@ -72,6 +76,7 @@ var listePoints = [
     yInitBulle: 425,
     xBulle: 200,
     yBulle: 425,
+    varAnim: 0,
     rayon: 105,
     couleur: "rgb(255, 0, 0)",
     tag: "Vie etudiante",
@@ -87,6 +92,7 @@ var listePoints = [
     yInitBulle: 300,
     xBulle: 25,
     yBulle: 300,
+    varAnim: 0,
     rayon: 100,
     couleur: "rgb(255, 0, 0)",
     tag: "Profs",
@@ -186,13 +192,17 @@ function renderer() {
   listePoints.forEach((point) => {
     animerNuage(point);
     if(perso.surIle && point.hover){
-      ctx.globalAlpha = 0.5;
       ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha = (0.5 - point.varAnim/-60)*2;
+      if(point.varAnim > - 5){
+        ctx.globalAlpha = 1;
+      }
       ctx.font = "20px hwt-artz";
-      ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10);
+      ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10); 
     }
   });
+  //remettre les sprite opaque
+  ctx.globalAlpha = 1;
   //dessiner guide
   if (isGuide) {
     ctx.drawImage(guide.img, 0, 0);
@@ -431,14 +441,15 @@ function animerPerso() {
 
 //fonction pour animer les nuages
 function animerNuage(point){
-  var x = 0;
-  if(point.hover && point.yBulle < point.yInitBulle){
-    point.yBulle ++;
-    console.log("++")
+  ctx.globalAlpha = 0.5 - point.varAnim/-60;
+  if(point.hover && point.varAnim < 0){
+    point.varAnim+=0.7;
+    point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
   } 
-  if (!point.hover && point.yBulle <= point.yInitBulle && point.yBulle >= point.yInitBulle - 100){
-    point.yBulle --;
-    console.log("--")
+  else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30){
+    point.varAnim-=0.7;
+    point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
+    console.log("--");
   }
 }
 
