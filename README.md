@@ -10,15 +10,15 @@
 ### Navigation
 - Il est possible d'intéragir des points d'interêts sur l'ile. Hover sur ces points va faire apparaitre un nuage avec le nom du point d'interet. Clicker sur un point va faire déplacer Éric jusqu'a ce point. Clicker sur ce point d'interêt lorsqu'Éric est déjà dessus va rediriger l'utilisateur vers le site lié au point
 - Les points d'interêts peuvent être créé par l'utilisateur en le rajoutant dans le array ListePoints. Chaque point devra comprendre ces variables:
-* x: position x du perso sur le point
-* y: position y du perso sur le point
-* xPoint: position x de la zone de hover du point
-* yPoint: position y de la zone de hover du point
-* xBulle: position x ou le nuage apparaitera dans l'animation
-* yBulle: position y ou le nuage apparaitera dans l'animation
-* rayon: la taille de la zone de hover du point
-* tag: le nom de la catégorie que le point représente
-* lien: le lieu ou le point va rediriger l'utilisateur
+  * x: position x du perso sur le point
+  * y: position y du perso sur le point
+  * xPoint: position x de la zone de hover du point
+  * yPoint: position y de la zone de hover du point
+  * xBulle: position x ou le nuage apparaitera dans l'animation
+  * yBulle: position y ou le nuage apparaitera dans l'animation
+  * rayon: la taille de la zone de hover du point
+  * tag: le nom de la catégorie que le point représente
+  * lien: le lieu ou le point va rediriger l'utilisateur
 
 ### Adaptabilité du canvas
 - Le canvas de l'ile à été fait pour qu'il soit accessible et fonctionnel peu importe la taille de l'écran et l'appareil utilisé
@@ -30,6 +30,6 @@
 #### Le futur du canvas
 - Nous avons encore en tête d'améliorer le canvas durant le reste de notre projet.
 - Nous avons comme but:
-* permettre de zoomer/dézoomer le canvas en pinchant avec les doigts sur mobile
-* améliorer le style et l'animation des nuages
-* assurer que l'animation d'Éric de skip pas de frame, peu importe de l'ordi et de la situation
+  * permettre de zoomer/dézoomer le canvas en pinchant avec les doigts sur mobile
+  * améliorer le style et l'animation des nuages
+  * assurer que l'animation d'Éric de skip pas de frame, peu importe de l'ordi et de la situation
