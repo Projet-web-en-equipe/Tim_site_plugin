@@ -11,7 +11,7 @@
 
  function enqueue_style_script(){
     wp_enqueue_style('plugin-Canvas.css', plugins_url('style.css', __FILE__));
-    wp_enqueue_script('animPerso', plugins_url('js/plugin-AnimPerso.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_script('animPerso', plugins_url('js/plugin-animPerso.js', __FILE__), array('jquery'), null, true);
     wp_enqueue_script('codeAccueil', plugins_url('js/plugin-codeAccueil.js', __FILE__), array('jquery'), null, true);
     wp_enqueue_script('codeCanvas', plugins_url('js/plugin-codeCanvas.js', __FILE__), array('jquery'), null, true);
 }

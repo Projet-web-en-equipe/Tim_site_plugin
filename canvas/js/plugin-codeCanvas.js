@@ -16,8 +16,8 @@ var listePoints = [
     varAnim: 0,
     rayon: 110,
     couleur: "rgb(255, 0, 0)",
-    tag: "Evenement",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Projets
+    tag: "Évènements",
+    lien: "category/evenements", // remplace par l'URL de la catégorie Projets
   },
   {
     x: 610,
@@ -32,7 +32,7 @@ var listePoints = [
     rayon: 160,
     couleur: "rgb(255, 0, 0)",
     tag: "Cours",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Cours
+    lien: "category/cours", // remplace par l'URL de la catégorie Cours
     hover: false,
   },
   {
@@ -48,7 +48,7 @@ var listePoints = [
     rayon: 90,
     couleur: "rgb(255, 0, 0)",
     tag: "Projets",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Profs
+    lien: "category/projets", // remplace par l'URL de la catégorie Profs
     hover: false,
   },
   {
@@ -64,7 +64,7 @@ var listePoints = [
     rayon: 135,
     couleur: "rgb(255, 0, 0)",
     tag: "Futur",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Emplois
+    lien: "category/futur", // remplace par l'URL de la catégorie Emplois
     hover: false,
   },
   {
@@ -80,7 +80,7 @@ var listePoints = [
     rayon: 105,
     couleur: "rgb(255, 0, 0)",
     tag: "Vie etudiante",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Évènements
+    lien: "category/vie-etudiante", // remplace par l'URL de la catégorie Évènements
     hover: false,
   },
   {
@@ -96,7 +96,7 @@ var listePoints = [
     rayon: 100,
     couleur: "rgb(255, 0, 0)",
     tag: "Profs",
-    lien: "/category/cours", // remplace par l'URL de la catégorie Vie étudiante
+    lien: "category/profs", // remplace par l'URL de la catégorie Vie étudiante
     hover: false,
   },
 ];
