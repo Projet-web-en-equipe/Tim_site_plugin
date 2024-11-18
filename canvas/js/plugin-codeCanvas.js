@@ -251,13 +251,20 @@ canvas.addEventListener("mousemove", (event) => {
     y: event.clientY - canvas.offsetTop + (leCanvas.html.getBoundingClientRect().height - 900) / 2,
   };
   if (perso.surIle) {
+    var hoverClick = false;
     listePoints.forEach((point) => {
       if (intersecte(pos, point)) {
         point.hover = true
+        hoverClick = true;
       } else {
         point.hover = false;
       }
     });
+    if(hoverClick){
+      canvas.style.cursor = "pointer";
+    } else {
+      canvas.style.cursor = "default";
+    }
   }
 });
 
