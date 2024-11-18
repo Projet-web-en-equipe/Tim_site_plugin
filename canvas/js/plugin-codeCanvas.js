@@ -127,7 +127,7 @@ perso.y = listePoints[perso.pos].y;
 //image bulle info
 var bulle = {
   img: new Image(),
-  urlImage: "https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/nuageCrop.png",
+  urlImage: "https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/caca.png",
   active: true,
   posX: 450,
   posY: 450,
@@ -191,12 +191,15 @@ function renderer() {
   //dessiner nuage si elle est active
   listePoints.forEach((point) => {
     animerNuage(point);
-    if(perso.surIle && point.hover){
+    //si le nuage bouge assez bas 
+    if(perso.surIle && point.yInitBulle - 140 <= point.yBulle){
       ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
+      //regler l'opacite selon le varAnim
       ctx.globalAlpha = (0.5 - point.varAnim/-60)*2;
       if(point.varAnim > - 5){
         ctx.globalAlpha = 1;
       }
+      //mettre le texte
       ctx.font = "20px hwt-artz";
       ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10); 
     }
@@ -246,10 +249,12 @@ canvas.addEventListener("click", (event) => {
 
 //detecter les hovers sur les zones des batiments
 canvas.addEventListener("mousemove", (event) => {
+  //trouver la position de la souris
   const pos = {
     x: event.clientX - canvas.offsetLeft + (leCanvas.html.getBoundingClientRect().width - 900) / 2,
     y: event.clientY - canvas.offsetTop + (leCanvas.html.getBoundingClientRect().height - 900) / 2,
   };
+  //check si la position de la souris est sur un POI
   if (perso.surIle) {
     var hoverClick = false;
     listePoints.forEach((point) => {
@@ -260,6 +265,7 @@ canvas.addEventListener("mousemove", (event) => {
         point.hover = false;
       }
     });
+    //si un point est en hover, mettre le curseur en pointer
     if(hoverClick){
       canvas.style.cursor = "pointer";
     } else {
@@ -448,15 +454,17 @@ function animerPerso() {
 
 //fonction pour animer les nuages
 function animerNuage(point){
-  ctx.globalAlpha = 0.5 - point.varAnim/-60;
+  //ajuster l'opacitee du nuage selon le varAnim
+  ctx.globalAlpha = 1 - point.varAnim/-60;
+  //animer vers le bas si le point est en hover
   if(point.hover && point.varAnim < 0){
     point.varAnim+=0.7;
     point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
   } 
+  //animer vers le haut si le nuage n'est plus en hover
   else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30){
     point.varAnim-=0.7;
     point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
-    console.log("--");
   }
 }
 
