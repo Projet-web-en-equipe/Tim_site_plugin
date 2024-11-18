@@ -195,10 +195,10 @@ function renderer() {
     if(perso.surIle && point.yInitBulle - 140 <= point.yBulle){
       ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
       //regler l'opacite selon le varAnim
-      ctx.globalAlpha = (0.5 - point.varAnim/-60)*2;
-      if(point.varAnim > - 5){
-        ctx.globalAlpha = 1;
-      }
+      console.log(ctx.globalAlpha);
+      // if(point.varAnim > - 5){
+      //   ctx.globalAlpha = 1;
+      // }
       //mettre le texte
       ctx.font = "20px hwt-artz";
       ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10); 
@@ -454,8 +454,7 @@ function animerPerso() {
 
 //fonction pour animer les nuages
 function animerNuage(point){
-  //ajuster l'opacitee du nuage selon le varAnim
-  ctx.globalAlpha = 1 - point.varAnim/-60;
+  ctx.globalAlpha = 1 - (point.varAnim/-24);
   //animer vers le bas si le point est en hover
   if(point.hover && point.varAnim < 0){
     point.varAnim+=0.7;
