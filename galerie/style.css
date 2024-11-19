@@ -1,0 +1,35 @@
+body{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#ctnGalerie{
+  background-color: aqua;
+  width: 640px;
+  height: 360px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.fleche{
+  background-color: white;
+  opacity: 30%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.imgGalerie{
+  position: absolute;
+  max-width: 640px;
+  max-height: 360px;
+  margin: auto;
+}

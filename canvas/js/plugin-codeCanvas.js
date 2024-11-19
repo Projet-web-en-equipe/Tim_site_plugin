@@ -194,8 +194,6 @@ function renderer() {
     //si le nuage bouge assez bas 
     if(perso.surIle && point.yInitBulle - 140 <= point.yBulle){
       ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
-      //regler l'opacite selon le varAnim
-      console.log(ctx.globalAlpha);
       // if(point.varAnim > - 5){
       //   ctx.globalAlpha = 1;
       // }
