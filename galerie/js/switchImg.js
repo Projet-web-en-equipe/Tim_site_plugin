@@ -1,41 +1,45 @@
 var flecheG = document.getElementById("flecheG");
 var flecheD = document.getElementById("flecheD");
 var ordre = [];
+var enAnim = false;
 
-console.log(groupeImg)
-
-for(i=0; i < groupeImg.length; i++){
+for (i = 0; i < groupeImg.length; i++) {
     var bhay = (groupeImg.length - 1 - i);
     ordre.push(bhay);
 }
-console.log(ordre)
 
 flecheG.addEventListener("click", () => {
-    var bhay = ordre[0];
-    ordre.shift();
-    ordre.push(bhay);
-    console.log(ordre)
-    setZImg();
+    if (!enAnim) {
+        enAnim = true;
+        groupeImg[ordre.indexOf(0)].classList.add("avant");
+        window.setTimeout(() => {
+            groupeImg[ordre.indexOf(0)].classList.remove("avant");
+            var bhay = ordre[0];
+            ordre.shift();
+            ordre.push(bhay);
+            console.log(ordre)
+            setZImg();
+        }, 1500)
+    }
 });
 
 flecheD.addEventListener("click", () => {
-    var bhay = ordre.pop();
-    ordre.unshift(bhay);
-    console.log(ordre)
-    setZImg();
-});
-
-document.addEventListener("keydown", (e)=>{
-    if(e.code == "Space"){
-        groupeImg[ordre.indexOf(2)].classList.add("skip");
+    if (!enAnim) {
+        enAnim = true;
+        groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.add("skip");
         window.setTimeout(() => {
-            groupeImg[ordre.indexOf(2)].classList.remove("skip");
+            groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
+            var bhay = ordre.pop();
+            ordre.unshift(bhay);
+            console.log(ordre)
+            setZImg();
         }, 1500)
     }
-})
+});
 
-function setZImg(){
-    for(var i = 0; i < groupeImg.length; i++){
-        groupeImg[i].style.zIndex = ordre[i];
+function setZImg() {
+    for (var i = 0; i < groupeImg.length; i++) {
+        groupeImg[i].style.zIndex = ordre[i] * 1000 + 1000;
     }
+    enAnim = false;
 }

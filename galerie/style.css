@@ -42,10 +42,18 @@ body{
   animation-fill-mode: forwards;
 }
 
+.avant{
+  animation-name: carteArriere;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(.42,.53,.48,.95);
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
 @keyframes carteArriere {
   from, to{
     transform: translateY(0px) rotate(0);
-    z-index:2000;
+    z-index:10000000000;
   }
   50%{
     transform: translateY(-300px) rotate(80deg);
