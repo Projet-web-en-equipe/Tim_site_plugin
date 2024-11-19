@@ -1,13 +1,5 @@
-body{
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 #ctnGalerie{
+  position: relative;
   background-color: aqua;
   width: 640px;
   height: 360px;
@@ -25,12 +17,18 @@ body{
   justify-content: center;
   align-items: center;
   user-select: none;
+  cursor: pointer;
+  z-index: 10000000000000;
 }
 
 .imgGalerie{
   position: absolute;
+  display: block;
   max-width: 640px;
   max-height: 360px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin: auto;
   transform-origin: 500px 320px;
 }

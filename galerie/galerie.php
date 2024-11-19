@@ -1,28 +1,31 @@
 <?php
 /**
- * Plugin Name: Canvas
+ * Plugin Name: Galerie de photo
  * Plugin URI: https://gftnth00.mywhc.ca/tim14/
- * Description: Ajout d'un canvas dans une page web
+ * Description: Permet de montrer une galerie d'image de maniere interactive
  * Version: 1.0
  * Author: Lohan Moutquin
  * Author URI: https://www.behance.net/lohanmoutquin
  * License: GPL2
  */
 
- function enqueue_style_script(){
-    if(is_front_page()){
-        wp_enqueue_style('plugin-Canvas.css', plugins_url('style.css', __FILE__));
-        wp_enqueue_script('animPerso', plugins_url('js/plugin-animPerso.js', __FILE__), array('jquery'), null, true);
-        wp_enqueue_script('codeAccueil', plugins_url('js/plugin-codeAccueil.js', __FILE__), array('jquery'), null, true);
-        wp_enqueue_script('codeCanvas', plugins_url('js/plugin-codeCanvas.js', __FILE__), array('jquery'), null, true);
-    }
+ function enqueue_style_script_galerie(){
+        wp_enqueue_style('galerie.css', plugins_url('style.css', __FILE__));
+        wp_enqueue_script('posImg', plugins_url('js/positionnerImg.js', __FILE__), array('jquery'), null, true);
+        wp_enqueue_script('switchImg', plugins_url('js/switchImg.js', __FILE__), array('jquery'), null, true);
 }
 
-add_action('wp_enqueue_scripts','enqueue_style_script');
+add_action('wp_enqueue_scripts','enqueue_style_script_galerie');
 
-function shortcodeCanvas($atts) {
-    return '<img src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/10/EricG.png" alt="inshallah" id="perso" />
-    <canvas id="ile" width="900" height="900"></canvas>';
+function shortcodeGalerie() {
+    return '<div id="ctnGalerie">
+        <div id="flecheG" class="fleche G"><h1 class="G"><</h1></div>
+        <div id="flecheD" class="fleche D"><h1 class="D">></h1></div>
+        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-manon-bertrand.jpg" alt="">
+        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/10/laVersionMini.png" alt="">
+        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/10/Emplois.png" alt="">
+        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/martin_Article-scaled.jpg" alt="">
+    </div>';
 }
 
-add_shortcode('le_canvas', 'shortcodeCanvas');
+add_shortcode('la_galerie', 'shortcodeGalerie');

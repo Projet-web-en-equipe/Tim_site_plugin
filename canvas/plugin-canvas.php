@@ -20,7 +20,7 @@
 
 add_action('wp_enqueue_scripts','enqueue_style_script');
 
-function shortcodeCanvas($atts) {
+function shortcodeCanvas() {
     return '<img src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/10/EricG.png" alt="inshallah" id="perso" />
     <canvas id="ile" width="900" height="900"></canvas>';
 }
