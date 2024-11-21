@@ -187,8 +187,6 @@ window.addEventListener("touchmove", (e) => {
           leCanvas.html.style.transform = "scale(" + leCanvas.zoom * 100 + "%)";
         }
         exDistance = distance;
-      } else {
-        h1.innerHTML = "juste 1 doigté";
       }
     }
 
