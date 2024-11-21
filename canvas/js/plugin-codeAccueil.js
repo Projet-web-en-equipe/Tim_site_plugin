@@ -178,7 +178,7 @@ window.addEventListener("touchmove", (e) => {
         var distance = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
         if (exDistance != null) {
           if (leCanvas.zoom >= 0.5 && leCanvas.zoom <= 1.5) {
-            leCanvas.html.zoom += (exDistance - distance)/100;
+            leCanvas.zoom += (distance - exDistance)/100;
           }
           if (leCanvas.zoom > 1.5) {
             leCanvas.zoom = 1.5;
