@@ -62,8 +62,9 @@ function resetPos() {
 
 ///////////////////ADDEVENTLISTENER TOWN/////////////////////////////
 
-//addeventlistener pour replacer le canvas quand la taille de la page change
+//addeventlisteners pour replacer le canvas quand la taille de la page change
 window.addEventListener("resize", resetPos);
+window.addEventListener("orientationchange", resetPos);
 //addeventlistener qui detect quand l'utilisateur scroll sur la carte
 window.addEventListener('wheel', function (event) {
   if (perso.surIle) {

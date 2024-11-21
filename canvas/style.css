@@ -1,3 +1,8 @@
+*{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  touch-action: none;
+}
 canvas {
     display: block;
   position: absolute;
