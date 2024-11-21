@@ -1,6 +1,6 @@
 var groupeImg = document.getElementsByClassName("imgGalerie");
 var ctnGalerie = document.getElementById("ctnGalerie");
-console.log(groupeImg.length);
+console.log(groupeImg);
 for(i=0; i < groupeImg.length; i++){
     //groupeImg[i].style.left = "50%";
     //groupeImg[i].style.marginLeft = groupeImg[i].clientWidth / -2 + "px"

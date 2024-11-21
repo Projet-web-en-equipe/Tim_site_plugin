@@ -8,35 +8,35 @@ for (i = 0; i < groupeImg.length; i++) {
     ordre.push(bhay);
 }
 
-flecheG.addEventListener("click", () => {
-    // if (!enAnim) {
-    //     enAnim = true;
-    //     groupeImg[ordre.indexOf(0)].classList.add("avant");
-    //     window.setTimeout(() => {
-    //         groupeImg[ordre.indexOf(0)].classList.remove("avant");
-    //         var bhay = ordre[0];
-    //         ordre.shift();
-    //         ordre.push(bhay);
-    //         console.log(ordre)
-    //         setZImg();
-    //     }, 1500)
-    // }
-});
+// flecheG.addEventListener("click", () => {
+//     // if (!enAnim) {
+//     //     enAnim = true;
+//     //     groupeImg[ordre.indexOf(0)].classList.add("avant");
+//     //     window.setTimeout(() => {
+//     //         groupeImg[ordre.indexOf(0)].classList.remove("avant");
+//     //         var bhay = ordre[0];
+//     //         ordre.shift();
+//     //         ordre.push(bhay);
+//     //         console.log(ordre)
+//     //         setZImg();
+//     //     }, 1500)
+//     // }
+// });
 
-flecheD.addEventListener("click", () => {
-    // console.log("GAUCHHE");
-    // if (!enAnim) {
-    //     enAnim = true;
-    //     groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.add("skip");
-    //     window.setTimeout(() => {
-    //         groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
-    //         var bhay = ordre.pop();
-    //         ordre.unshift(bhay);
-    //         console.log(ordre)
-    //         setZImg();
-    //     }, 1500)
-    // }
-});
+// flecheD.addEventListener("click", () => {
+//     // console.log("GAUCHHE");
+//     // if (!enAnim) {
+//     //     enAnim = true;
+//     //     groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.add("skip");
+//     //     window.setTimeout(() => {
+//     //         groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
+//     //         var bhay = ordre.pop();
+//     //         ordre.unshift(bhay);
+//     //         console.log(ordre)
+//     //         setZImg();
+//     //     }, 1500)
+//     // }
+// });
 
 function setZImg() {
     for (var i = 0; i < groupeImg.length; i++) {
@@ -50,6 +50,7 @@ document.body.addEventListener('click', function (event) {
         if (element == "G") {
             if (!enAnim) {
                 enAnim = true;
+                console.log(ordre);
                 groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.add("skip");
                 window.setTimeout(() => {
                     groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
