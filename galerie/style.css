@@ -1,8 +1,7 @@
 #ctnGalerie{
   position: relative;
-  background-color: aqua;
-  width: 640px;
-  height: 360px;
+  max-width: 640px;
+  max-height: 360px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,14 +35,14 @@
 .skip{
   animation-name: carteArriere;
   animation-duration: 1.5s;
-  animation-timing-function: cubic-bezier(.42,.52,.52,.92);
+  animation-timing-function: cubic-bezier(.34,0,.53,.91);
   animation-fill-mode: forwards;
 }
 
 .avant{
   animation-name: carteAvant;
   animation-duration: 1.5s;
-  animation-timing-function: cubic-bezier(.42,.52,.52,.92);
+  animation-timing-function: cubic-bezier(.34,0,.53,.91);
   animation-fill-mode: forwards;
 }
 
@@ -52,7 +51,7 @@
     transform: translateY(0px) rotate(0);
     z-index:10000000000;
   }
-  50%{
+  30%{
     transform: translateY(-300px) rotate(80deg);
     z-index: 0;
   }
@@ -67,7 +66,7 @@
     transform: translateY(0px) rotate(0);
     z-index:0;
   }
-  50%{
+  30%{
     transform: translateY(-300px) rotate(80deg);
     z-index: 0;
   }
