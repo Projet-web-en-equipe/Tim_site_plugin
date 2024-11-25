@@ -19,12 +19,11 @@ function setZImg() {
 }
 
 document.body.addEventListener('click', function (event) {
+    setZImg();
     event.target.classList.forEach(element => {
         if (element == "D") {
             if (!enAnim) {
                 enAnim = true;
-                console.log(ordre);
-                console.log(ordre.indexOf(groupeImg.length));
                 groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.add("skip");
                 window.setTimeout(() => {
                     groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
@@ -46,7 +45,6 @@ document.body.addEventListener('click', function (event) {
                     var bhay = ordre[0];
                     ordre.shift();
                     ordre.push(bhay);
-                    console.log(ordre)
                     setZImg();
                 }, 1500)
             } else {
