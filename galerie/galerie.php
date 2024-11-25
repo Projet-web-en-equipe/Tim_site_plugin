@@ -21,11 +21,12 @@ function shortcodeGalerie() {
     return '<div id="ctnGalerie">
         <div id="flecheG" class="fleche G"><h1 class="G"><</h1></div>
         <div id="flecheD" class="fleche D"><h1 class="D">></h1></div>
-        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-manon-bertrand.jpg" alt="">
-        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-denis-pellerin.jpg" alt="">
-        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-david-ross.jpg" alt="">
-        <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/martin_Article-scaled.jpg" alt="">
     </div>';
 }
 
 add_shortcode('la_galerie', 'shortcodeGalerie');
+
+// <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-manon-bertrand.jpg" alt="">
+//         <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-denis-pellerin.jpg" alt="">
+//         <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/og-david-ross.jpg" alt="">
+//         <img class="imgGalerie" src="https://gftnth00.mywhc.ca/tim14/wp-content/uploads/2024/11/martin_Article-scaled.jpg" alt="">

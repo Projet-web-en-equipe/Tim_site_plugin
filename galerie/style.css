@@ -23,7 +23,7 @@
   z-index: 10000000000000;
 }
 
-.imgGalerie{
+#ctnGalerie img{
   position: absolute;
   display: block;
   width: 100%;
