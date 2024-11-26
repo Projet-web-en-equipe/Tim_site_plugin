@@ -3,14 +3,6 @@ var flecheD = document.getElementById("flecheD");
 var ordre = [];
 var enAnim = false;
 
-function ordonnerOrdre(){
-    for (i = 0; i < groupeImg.length; i++) {
-        console.log("OWAEDKJWO");
-        var bhay = (groupeImg.length - 1 - i);
-        ordre.push(bhay);
-    }
-}
-
 function setZImg() {
     for (var i = 0; i < groupeImg.length; i++) {
         groupeImg[i].style.zIndex = ordre[i] * 1000 + 1000;
