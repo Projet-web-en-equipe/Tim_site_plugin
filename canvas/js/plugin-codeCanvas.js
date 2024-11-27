@@ -166,7 +166,7 @@ function renderer() {
   // tout effacer
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   //dessiner les cercles
-  if(isRouge){
+  if (isRouge) {
     listePoints.forEach((circle) => {
       ctx.beginPath();
       ctx.globalAlpha = 0.5;
@@ -174,7 +174,7 @@ function renderer() {
       ctx.fillStyle = circle.couleur;
       ctx.fill();
       ctx.globalAlpha = 1;
-    }); 
+    });
   }
   //dessiner perso
   if (perso.surIle) {
@@ -194,14 +194,17 @@ function renderer() {
   listePoints.forEach((point) => {
     animerNuage(point);
     //si le nuage bouge assez bas 
-    if(perso.surIle && point.yInitBulle - 140 <= point.yBulle){
+    if (perso.surIle && point.yInitBulle - 140 <= point.yBulle) {
       ctx.drawImage(bulle.img, point.xBulle, point.yBulle);
       // if(point.varAnim > - 5){
       //   ctx.globalAlpha = 1;
       // }
       //mettre le texte
-      ctx.font = "20px hwt-artz";
-      ctx.fillText(point.tag, point.xBulle + (150 - ctx.measureText(point.tag).width) / 2, point.yBulle + bulle.height + 20); 
+      ctx.strokeStyle = "rgb(200, 184, 190)"; //set the color of the stroke line 
+      ctx.lineWidth = 0.5;  //define the width of the stroke line
+      ctx.font = "22px hwt-artz";
+      ctx.fillText(point.tag, point.xBulle + (150 - ctx.measureText(point.tag).width) / 2, point.yBulle + bulle.height + 20);
+      ctx.strokeText(point.tag, point.xBulle + (150 - ctx.measureText(point.tag).width) / 2, point.yBulle + bulle.height + 20);
     }
   });
   //remettre les sprite opaque
@@ -267,7 +270,7 @@ canvas.addEventListener("mousemove", (event) => {
       }
     });
     //si un point est en hover, mettre le curseur en pointer
-    if(hoverClick){
+    if (hoverClick) {
       canvas.style.cursor = "pointer";
     } else {
       canvas.style.cursor = "default";
@@ -454,17 +457,17 @@ function animerPerso() {
 }
 
 //fonction pour animer les nuages
-function animerNuage(point){
-  ctx.globalAlpha = 1 - (point.varAnim/-24);
+function animerNuage(point) {
+  ctx.globalAlpha = 1 - (point.varAnim / -24);
   //animer vers le bas si le point est en hover
-  if(nuageActif == point.tag && point.varAnim < 0){
-    point.varAnim+=0.7;
-    point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
-  } 
+  if (nuageActif == point.tag && point.varAnim < 0) {
+    point.varAnim += 0.7;
+    point.yBulle = -1 * (0.5 * point.varAnim) ** 2 + point.yInitBulle;
+  }
   //animer vers le haut si le nuage n'est plus en hover
-  else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30 && nuageActif != point.tag){
-    point.varAnim-=0.7;
-    point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
+  else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30 && nuageActif != point.tag) {
+    point.varAnim -= 0.7;
+    point.yBulle = -1 * (0.5 * point.varAnim) ** 2 + point.yInitBulle;
   }
 }
 
