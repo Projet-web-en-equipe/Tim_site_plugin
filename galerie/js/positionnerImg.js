@@ -19,7 +19,6 @@ function appliquerImg(){
 function ordonnerOrdre(){
     ordre = [];
     for (i = 0; i < groupeImg.length; i++) {
-        console.log("OWAEDKJWO");
         var bhay = (groupeImg.length - 1 - i);
         ordre.push(bhay);
     }

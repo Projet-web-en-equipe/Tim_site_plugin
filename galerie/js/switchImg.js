@@ -7,7 +7,6 @@ function setZImg() {
     for (var i = 0; i < groupeImg.length; i++) {
         groupeImg[i].style.zIndex = ordre[i] * 1000 + 1000;
     }
-    enAnim = false;
 }
 
 document.body.addEventListener('click', function (event) {
@@ -21,8 +20,8 @@ document.body.addEventListener('click', function (event) {
                     groupeImg[ordre.indexOf(groupeImg.length - 1)].classList.remove("skip");
                     var bhay = ordre.pop();
                     ordre.unshift(bhay);
-                    console.log(ordre)
                     setZImg();
+                    enAnim = false;
                 }, 1500)
             } else {
                 console.log("nuh uh");
@@ -38,6 +37,7 @@ document.body.addEventListener('click', function (event) {
                     ordre.shift();
                     ordre.push(bhay);
                     setZImg();
+                    enAnim = false;
                 }, 1500)
             } else {
                 console.log("nuh uh");
