@@ -154,6 +154,8 @@ var enMouvement = false;
 var cheminPerso = [];
 //la position ou le perso doit aller
 var destination = 0;
+//le nuage qui devra rester jusqu'a ce qu<un autre nuage se fasse activer
+var nuageActif = "";
 //TEST
 // var vPoint = 2;
 
@@ -259,6 +261,7 @@ canvas.addEventListener("mousemove", (event) => {
       if (intersecte(pos, point)) {
         point.hover = true
         hoverClick = true;
+        nuageActif = point.tag;
       } else {
         point.hover = false;
       }
@@ -454,12 +457,12 @@ function animerPerso() {
 function animerNuage(point){
   ctx.globalAlpha = 1 - (point.varAnim/-24);
   //animer vers le bas si le point est en hover
-  if(point.hover && point.varAnim < 0){
+  if(nuageActif == point.tag && point.varAnim < 0){
     point.varAnim+=0.7;
     point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
   } 
   //animer vers le haut si le nuage n'est plus en hover
-  else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30){
+  else if (!point.hover && point.varAnim <= 1 && point.varAnim >= -30 && nuageActif != point.tag){
     point.varAnim-=0.7;
     point.yBulle = -1*(0.5*point.varAnim)**2 + point.yInitBulle;
   }
