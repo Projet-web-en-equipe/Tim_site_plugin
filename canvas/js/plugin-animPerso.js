@@ -1,7 +1,7 @@
-
+console.log("ANMPERSO");
 var pseudoPerso =  document.getElementById("perso");
 var pseudoVitesse = 3;
-var pseudoVal = -10;
+var pseudoVal = -1300;
 var pseudoCanvas = document.querySelector("canvas");
 
 var tempsAnim = setInterval(fonctionAnim, 1000 / 60);

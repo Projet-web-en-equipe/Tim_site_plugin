@@ -199,7 +199,7 @@ function renderer() {
       // }
       //mettre le texte
       ctx.font = "20px hwt-artz";
-      ctx.fillText(point.tag, point.xBulle + 35, point.yBulle + bulle.height + 10); 
+      ctx.fillText(point.tag, point.xBulle + (150 - ctx.measureText(point.tag).width) / 2, point.yBulle + bulle.height + 20); 
     }
   });
   //remettre les sprite opaque
