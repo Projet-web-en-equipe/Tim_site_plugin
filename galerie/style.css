@@ -1,7 +1,7 @@
 #ctnGalerie{
   position: relative;
   width: 80%;
-  height: 360px;
+  height: auto;
   max-width: 640px;
   max-height: 360px;
   display: flex;
@@ -20,7 +20,7 @@
   align-items: center;
   user-select: none;
   cursor: pointer;
-  z-index: 10000000000000;
+  z-index: 1000000000000000000000;
 }
 
 #ctnGalerie img{
@@ -55,7 +55,7 @@
 @keyframes carteArriere {
   from{
     transform: translateY(0px) rotate(0);
-    z-index:10000000000;
+    z-index:10000000;
   }
   30%{
     transform: translateY(-300px) rotate(80deg);
@@ -78,6 +78,6 @@
   }
   to{
     transform: translateY(0px) rotate(0);
-    z-index: 10000000000000;
+    z-index: 10000000000;
   }
 }
