@@ -1,8 +1,8 @@
 #ctnGalerie{
   position: relative;
   width: 80%;
-  height: auto;
-  max-width: 640px;
+  height: 400px;
+  max-width: 650px;
   max-height: 360px;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,7 @@
   max-height: 360px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: auto;
   margin: auto;
   object-fit: contain;
   transform-origin: 500px 320px;
