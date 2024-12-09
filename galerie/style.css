@@ -2,7 +2,7 @@
   position: relative;
   width: 80%;
   height: 400px;
-  max-width: 650px;
+  max-width: 640px;
   max-height: 360px;
   display: flex;
   flex-direction: row;
@@ -13,8 +13,8 @@
 .fleche{
   background-color: white;
   opacity: 30%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
