@@ -3,7 +3,7 @@
  * Plugin Name: Galerie de photo
  * Plugin URI: https://gftnth00.mywhc.ca/tim14/
  * Description: Permet de montrer une galerie d'image de maniere interactive
- * Version: 1.1
+ * Version: 1.2
  * Author: Lohan Moutquin
  * Author URI: https://www.behance.net/lohanmoutquin
  * License: GPL2
