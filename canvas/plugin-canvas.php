@@ -3,7 +3,7 @@
  * Plugin Name: Canvas
  * Plugin URI: https://gftnth00.mywhc.ca/tim14/
  * Description: Ajout d'un canvas dans une page web
- * Version: 1.3
+ * Version: 1.4
  * Author: Lohan Moutquin
  * Author URI: https://www.behance.net/lohanmoutquin
  * License: GPL2
