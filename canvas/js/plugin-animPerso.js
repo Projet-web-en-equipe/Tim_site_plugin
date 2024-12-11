@@ -1,12 +1,13 @@
 console.log("ANMPERSO");
 var pseudoPerso =  document.getElementById("perso");
 var pseudoVitesse = 3;
-var pseudoVal = 0;
+var pseudoVal = -2000;
 var pseudoCanvas = document.querySelector("canvas");
 
 var tempsAnim = setInterval(fonctionAnim, 1000 / 60);
 
 function fonctionAnim(){
+    console.log(pseudoCanvas.getBoundingClientRect().x);
     if(pseudoVal <= 0){
         pseudoVal += pseudoVitesse;
         pseudoPerso.style.transform = "translate(" + checkXPerso() + "px , " + (checkYPerso() + pseudoVal )+ "px) RotateZ(" + pseudoVal * pseudoVitesse + "deg) scale(" + leCanvas.zoom * 100 + "%)"
